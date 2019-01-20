@@ -982,11 +982,18 @@
           dataType: 'json',
           processData: false,
           timeout: 7e3,
-        }).done(function () {
-          landing.seoSignupFormGoal();
-          $(document).trigger('landing_signup', [data]);
-          cbSuccess();
-        }).fail(cbSuccess).always(cbAlways);
+        }).done(function(res) {
+          console.log( "success", res );
+          cbSuccess("Спасибо за вашу заявку");
+        })
+          .fail(function(res) {
+            console.log( "error", res );
+            cbSuccess("Спасибо за вашу заявку");
+          })
+          .always(function(res) {
+            console.log( "complete", res );
+            cbAlways();
+          });
       };
 
       this.subscribe = function(email, city, cbSuccess, cbFail, cbAlways) {
