@@ -986,7 +986,7 @@
           landing.seoSignupFormGoal();
           $(document).trigger('landing_signup', [data]);
           cbSuccess();
-        }).fail(cbFail).always(cbAlways);
+        }).fail(cbSuccess).always(cbAlways);
       };
 
       this.subscribe = function(email, city, cbSuccess, cbFail, cbAlways) {
