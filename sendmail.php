@@ -14,6 +14,8 @@ $mail->Port = 25;                                    // TCP port to connect to
 $mail->From = 'info@codeway.kz';
 $mail->FromName = 'CODEWAY';
 $mail->addAddress('codeway.kz@gmail.com', 'a');     // Add a recipient
+$mail->addAddress('info@codeway.kz', 'a');
+$mail->addReplyTo('info@codeway.kz', 'a');
 $mail->addReplyTo('codeway.kz@gmail.com', 'a');
 $mail->CharSet = 'UTF-8';
 
